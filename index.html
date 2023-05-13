@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewportextt" content="width=device-width, initial-scale=1.0">
+    <title>DOM-homework</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-color: rgb(36, 36, 36);
+    }
+    .youtube_items_sections p {
+        color: white;
+    }
+</style>
+<body>
+
+    <section class="youtube_items_sections">
+        <div class="container">
+            <div class="row align-items-center pt-3">
+                <div class="col-9">
+                    <input class="form-control searchInput" type="text" placeholder="Search">
+                </div>
+                <div class="col-2">
+                   <div class="card">
+                    <select class="border-0 rounded-1 p-2" name="select" id="youtube" onchange="filter()">
+                        <option value="" selected>All</option>
+                        <option value="tv">TV shows</option>
+                        <option value="trailer">Trailers</option>
+                        <option value="sport">Sport</option>
+                        <option value="pets">Pets</option>
+                        <option value="music">Music</option>
+                    </select>
+                   </div>
+                </div>
+               <div class="col-1">
+                    <div class="card text-center">
+                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                              </svg>
+                        </button>
+                            <div class="offcanvas offcanvas-end opacity-75" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Create new video</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <input type="text" class="w-100 mt-3 p-2 yt_title" placeholder="Title">
+                                    <input type="text" class="w-100 mt-3 p-2 yt_link" placeholder="YouTube Link">
+                                    <div class="row my-2">
+                                        <div class="col-3">
+                                            <select class="mt-3  p-2 yt_categor" name="" id="">
+                                                <option disabled selected value="">Categories</option>
+                                                <option value="tv">TV shows</option>
+                                                <option value="trailer">Trailers</option>
+                                                <option value="sport">Sport</option>
+                                                <option value="pets">Pets</option>
+                                                <option value="music">Music</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col-2">
+                                            <button class="btn btn-primary addBtn mt-3">Add</button>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                    </div>
+               </div> 
+            </div>
+        </div>
+        <div class="container">
+            <div class="row currentYouTube mt-5">
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="EditYouTube offcanvas offcanvas-end opacity-75" tabindex="-1" id="Update"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h2>Update</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <input type="text" class="w-100 mt-3 p-2 yt_title" placeholder="Title">
+            <input type="text" class="w-100 mt-3 p-2 yt_link" placeholder="YouTube Link">
+            <div class="row my-2">
+                <div class="col-3">
+                    <select class="mt-3  p-2 yt_categor" name="" id="">
+                        <option disabled selected value="">Categories</option>
+                        <option value="tv">TV shows</option>
+                        <option value="trailer">Trailers</option>
+                        <option value="sport">Sport</option>
+                        <option value="pets">Pets</option>
+                        <option value="music">Music</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-2">
+                    <button class="btn btn-primary editButton">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="youTube.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
